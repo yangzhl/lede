@@ -338,7 +338,7 @@ mac80211_hostapd_setup_bss() {
 	set_default start_disabled 0
 
 	[ "$wds" -gt 0 ] && append hostapd_cfg "wds_sta=1" "$N"
-	[ "$staidx" -gt 0 -o "$start_disabled" -eq 1 ] && append hostapd_cfg "start_disabled=1" "$N"
+	[ "$staidx" -gt 0 -o "$start_disabled" -eq 1 ] && append hostapd_cfg "start_disabled=0" "$N"
 
 	cat >> /var/run/hostapd-$phy.conf <<EOF
 $hostapd_cfg
