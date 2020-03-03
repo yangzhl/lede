@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # 
 
-name: OpenWrt-CI
+name: xiaomi-mini
 
 on:
   push:
@@ -61,10 +61,19 @@ jobs:
           rm -f ./.config*
           touch ./.config
           echo 'CONFIG_TARGET_ramips=y' >> .config
-          echo 'CONFIG_TARGET_ramips_mt76x8=y' >> .config
-          echo 'CONFIG_TARGET_ramips_mt76x8_DEVICE_xiaomi_miwifi-nano=y' >> .config
+          echo 'CONFIG_TARGET_ramips_mt7620=y' >> .config
+          echo 'CONFIG_TARGET_ramips_mt7620_DEVICE_xiaomi_miwifi-mini=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y' >> .config
           make defconfig
+    
+      - name: 自定义主题
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+          git clone https://github.com/Ameykyl/luci-app-koolproxyR
+          git clone https://github.com/rosywrt/luci-theme-rosy
 
       - name: Make download
         run: |
