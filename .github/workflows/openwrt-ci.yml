@@ -70,13 +70,6 @@ jobs:
           echo 'CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y' >> .config
           make defconfig
     
-      #- name: 自定义主题
-      #  run: |
-      #    cd package
-      #    mkdir openwrt-packages
-      #    cd openwrt-packages
-      #    git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-      #    git clone https://github.com/rosywrt/luci-theme-rosy.git
 
       - name: Make download
         run: |
