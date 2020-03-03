@@ -64,7 +64,7 @@ jobs:
           echo 'CONFIG_TARGET_ramips_mt76x8=y' >> .config
           echo 'CONFIG_TARGET_ramips_mt76x8_DEVICE_xiaomi_miwifi-nano=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y' >> .config
-          make deconfig
+          make defconfig
 
       - name: Make download
         run: |
