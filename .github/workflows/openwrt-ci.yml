@@ -61,10 +61,10 @@ jobs:
           rm -f ./.config*
           touch ./.config
           cat >> .config <<EOF
-            CONFIG_TARGET_ramips= y
-            CONFIG_TARGET_ramips_mt76x8= y
-            CONFIG_TARGET_ramips_mt76x8_DEVICE_xiaomi_miwifi-nano= y
-            CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+          CONFIG_TARGET_ramips=y
+          CONFIG_TARGET_ramips_mt76x8=y
+          CONFIG_TARGET_ramips_mt76x8_DEVICE_xiaomi_miwifi-nano=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
           EOF 
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
